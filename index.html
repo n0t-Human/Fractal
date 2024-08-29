@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fractals</title>
+</head>
+<body>
+    
+    <canvas id="mesh" class="mesh" allow-"fast-rendering" webgl="true"></canvas>
+
+    <div class="toggle">
+        <label>
+            <input class="toggle-checkbox" type="checkbox" id="mandelbrot">
+            <div class="toggle-slot">
+                <div class="toggle-button"></div>
+            </div>
+        </label>
+    </div>
+
+    <div class="section">
+        Color
+        
+        <div class="range">
+            <input type="range" min="0" max="360" value="0" class="slider" id="myRange">
+          </div>
+          <span id="colorVal"></span>
+    </div>
+
+    <div class="section">
+        test
+    </div>
+
+    <div class="section">
+        test
+    </div>
+
+    <div class="section">
+        test
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
