@@ -1,4 +1,4 @@
-let size = 400.0;
+let size = 200.0;
 
 const canvas = document.getElementById('mesh');
 const mesh = canvas.getContext('2d');
@@ -42,7 +42,7 @@ function render() {
             mesh.fillRect(x , y , 1, 1);
         }
     }
-    requestAnimationFrame(render);
+    //requestAnimationFrame(render);
 
 }
 
