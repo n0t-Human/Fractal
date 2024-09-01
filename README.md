@@ -14,7 +14,7 @@ But it's very slow on high res & large iterations.
 Maybe use GPU.js? 🤔 
 
 Features implemented : 
-- Generate Julia sets. (Now only Mandelbrot sets can be generated)
+- Generate Julia sets.
 
 Features I want to add :
 - Zooming
