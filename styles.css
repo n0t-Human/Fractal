@@ -22,7 +22,7 @@
 body {
     background: black;
     color: white;
-    font-size: 15pt;
+    font-size: 100%;
     font-family: 'OP';
     text-rendering: optimizeLegibility;
 
@@ -104,31 +104,36 @@ body {
 
 .section {
     width: 90%;
-    margin-top: 100px;
+    margin-top: 18px;
     display: flex;
     background-color: #212224;
-    margin-top: 18px;
     border-radius: 10px;
-    padding: 15px;
+    padding: 5%;
+    align-content:center;
+    align-items: center;
 }
 
 
 
 
 .range {
-    width: 100%; 
+    width: 100%;
+    /*border: 1px solid white;*/
+    align-content: center;
+    display: flex;
   }
   
   .slider {
     -webkit-appearance: none; 
-    width: 80%; 
+    width: 75%; 
     height: 5px; 
     background: linear-gradient(to right, #CA113D 0%, #CA113D var(--thumb-position), #4E4E4E var(--thumb-position));
     outline: none; 
     opacity: 1; 
     border-radius: 20px;
     --thumb-position: 0%;
-    margin-top: -15%;
+    margin-left:10%;
+    
   }
   
   .slider::-webkit-slider-thumb {
@@ -138,6 +143,6 @@ body {
     height: 18px; 
     background: #CA113D; 
     cursor: pointer;
-    border-radius: 100%;;
+    border-radius: 100%;
   }
 
