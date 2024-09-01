@@ -24,13 +24,41 @@
     </div>
     
 
-    <div class="section">
-        Color
+    <div class="section" style="display:grid;position: relative">
+        <h1 style="margin-top:0%">Color</h1>
+       Hue
+      <div style="display:flex;align-content: center ; width:100%;
+    align-items: center;">
+           <div class="range" style="padding:6% 6% 6% 0%;width: 90%; margin-left: 0%">
+            <input type="range" min="0" max="360" value="160" class="slider" id="colorRange" style="width: 100%;--thumb-position: 44.44%;margin-left: 0%;">
+           
+            </div>
+         <span id="colorVal" style="width: 22%;">160</span>
+        </div>
         
-        <div class="range">
-            <input type="range" min="0" max="360" value="160" class="slider" id="colorRange" style="--thumb-position: 44.44%;">
+        Color Spread
+       
+          <div style="display:flex;align-content: center; width:100%; align-items: center;">
+              <div class="range" style="padding: 6% 6% 6% 0%;width: 90%;">
+            <input type="range" min="1" max="10" value="1" class="slider" id="spread" step="0.1" style="width: 100%;--thumb-position: 1%; margin-left: 0%;">
           </div>
-          <span id="colorVal" style="width: 10%;"></span>
+            
+          <span id="spreadVal" style="width: 22%;">1</span>
+          </div>
+      
+      <div class="section" style="padding: 5% 5% 5% 0%">
+      Anti-Aliasing 
+      <div class="toggle" style="position: absolute; right : 7%">
+        <label>
+            <input class="toggle-checkbox" type="checkbox" id="aliasing">
+            <div class="toggle-slot">
+                <div class="toggle-button"></div>
+            </div>
+        </label>
+    </div>
+    </div>
+      
+
     </div>
     
     
@@ -38,8 +66,9 @@
     
 
     <div class="section" style="display:grid;position: relative">
-        Change constant
+        <h1 style="margin-top:0%">Change Constant</h1>
         
+        Real Part
         <div style="display:flex;align-content: center ; width:100%;
     align-items: center;">
            <div class="range" style="padding:6% 6% 6% 0%;width: 90%; margin-left: 0%">
@@ -49,6 +78,7 @@
          <span id="cxVal" style="width: 22%;">cx: 0</span>
         </div>
        
+       Imaginary Part
           <div style="display:flex;align-content: center; width:100%; align-items: center;">
               <div class="range" style="padding: 6% 6% 6% 0%;width: 90%;">
             <input type="range" min="-2" max="2" value="-0.7" class="slider" id="cyInput" step="0.01" style="width: 100%;--thumb-position: 32.5%; margin-left: 0%;">

@@ -63,7 +63,7 @@ function compute(zx , zy , cx, cy) {
         new_zx = (zx * zx - zy * zy) + cx;
         new_zy = 2 * zx * zy + cy;
         if(tricon)
-          new_zy = -new_zy;
+          new_zy = -new_zy; // compute z̄ instead of z
         zx = new_zx, zy = new_zy;
         if ((zx * zx + zy * zy) > inf)
           return i;
@@ -137,5 +137,21 @@ cy_input.oninput = function() {
   c_y = +this.value;
   cy_output.innerHTML = 'cy :' + ' ' + this.value;
   if(genJuliaSet)
+    render();
+}
+
+
+var spread_input = document.getElementById("spread");
+var spread_output = document.getElementById("spreadVal");
+
+spread_input.oninput = function() {
+  const value = +this.value;
+  const max = +spread_input.max;
+  const percent = map(value , +spread_input.min , max , 0 , 100);
+  
+  spread_input.style.setProperty('--thumb-position', `${percent}%`);
+  spread = +this.value;
+  spread_output.innerHTML = +this.value;
+
     render();
 }
