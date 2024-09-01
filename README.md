@@ -5,6 +5,9 @@
 ```
 Just execute the index.html file
 ```
+
+Or just simply visit this [link!](https://n0t-human.github.io/Fractal/)
+
 Trying to generate Fractals using html , css & js 
 
 But it's very slow on high res & large iterations.
