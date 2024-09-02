@@ -10,7 +10,7 @@ canvas.height = size;
 
 
 let genJuliaSet = false;
-let tricon = false;
+let tricorn = false;
 let samples = 16;
 let anti_aliasing = false;
 
@@ -66,7 +66,7 @@ function compute(zx , zy , cx, cy) {
     for (i = 1; i <= itr; i++) {
         new_zx = (zx * zx - zy * zy) + cx;
         new_zy = 2 * zx * zy + cy;
-        if(tricon)
+        if(tricorn)
           new_zy = -new_zy; // compute z̄ instead of z
         zx = new_zx, zy = new_zy;
         if ((zx * zx + zy * zy) > inf) {
