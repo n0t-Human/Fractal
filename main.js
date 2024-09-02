@@ -5,11 +5,13 @@ const mesh = canvas.getContext('2d');
 canvas.width = size;
 canvas.height = size;
 
-mesh.imageSmoothingEnabled = false
+
+//mesh.imageSmoothingEnabled = false
 
 
 let genJuliaSet = false;
 let tricon = false;
+let samples = 16;
 
 let min = -2.0;
 let max = 2.0;
