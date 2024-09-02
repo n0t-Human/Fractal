@@ -12,6 +12,7 @@ canvas.height = size;
 let genJuliaSet = false;
 let tricon = false;
 let samples = 16;
+let anti_aliasing = false;
 
 let min = -2.0;
 let max = 2.0;
@@ -61,14 +62,24 @@ function render() {
 }
 
 function compute(zx , zy , cx, cy) {
+  let smooth_iteration = -1;
     for (i = 1; i <= itr; i++) {
         new_zx = (zx * zx - zy * zy) + cx;
         new_zy = 2 * zx * zy + cy;
         if(tricon)
           new_zy = -new_zy; // compute z̄ instead of z
         zx = new_zx, zy = new_zy;
-        if ((zx * zx + zy * zy) > inf)
+        if ((zx * zx + zy * zy) > inf) {
+          if(anti_aliasing) {
+          smooth_iteration = parseFloat(i) - Math.log2(Math.max(1.0 , Math.log2(Math.sqrt(zx * zx + zy * zy))));
+          return smooth_iteration;
+          }
           return i;
+        }
+    }
+    if(anti_aliasing) {
+      smooth_iteration = parseFloat(itr) - Math.log2(Math.max(1.0 , Math.log2(Math.sqrt(zx * zx + zy * zy))));
+      return smooth_iteration;
     }
     return itr;
 }
@@ -156,4 +167,15 @@ spread_input.oninput = function() {
   spread_output.innerHTML = +this.value;
 
     render();
+}
+
+var MSAA = document.getElementById("aliasing");
+
+MSAA.oninput = function() {
+  if(anti_aliasing) {
+    anti_aliasing = false;
+  } else {
+    anti_aliasing = true;
+  }
+  render();
 }
