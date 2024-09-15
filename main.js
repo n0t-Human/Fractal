@@ -98,10 +98,10 @@ function map(value, a, b, c, d) {
 
 var genType = document.getElementById("set-type");
 genType.oninput = function() {
-  if(genJuliaSet) {
-    genJuliaSet = false;
-  } else {
+  if(genType.checked) {
     genJuliaSet = true;
+  } else {
+    genJuliaSet = false;
   }
   render();
 }
